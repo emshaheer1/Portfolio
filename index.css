@@ -1,0 +1,437 @@
+:root{
+    --color-accent: #5eead4;
+    --color-highlight: #e2e8f0;
+    --color-background:  rgba(45,212,191,.1);
+
+    /* Variables for colors is defined can be called anywhere through var  */
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    background: #071f2a;
+    color: #94a3b8;
+    padding: 4rem 2rem;
+    display: grid;
+    /* grid is used for the dispersion of web page */
+    grid-template-columns: repeat(1, minmax(0,1fr));
+    gap: 5rem;
+
+}
+
+.underlay-color{
+    position: fixed;
+    background: #172554;
+    inset: 0;
+    opacity: 0.1;
+
+    /* This section is for background settlement */
+}
+
+header,
+main,
+footer{
+    position: relative;
+    z-index: 10;
+
+    /* This section is for the positioning of layers that which layer has to come first */
+}
+
+header h1, 
+header h3,
+.light-text{
+    color: var(--color-highlight);
+}
+
+header a{
+    text-decoration: none;
+}
+
+header h1{
+    font-weight: 600;
+}
+
+header h3{
+    font-weight: 400;
+}
+
+header{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 350px;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    gap: 6rem;
+}
+
+section{
+
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+section h2{
+    text-transform: uppercase;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.about-content{
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    
+}
+
+nav a .arrow-icon{
+    padding-right: 1rem;
+}
+
+
+p,
+h2{
+    
+    line-height: 1.7rem;
+}
+
+.animated-text{
+    color: var(--color-highlight);
+    cursor:pointer;
+    transition-duration: 100ms;
+    text-decoration: none;
+}
+
+.animated-text:hover{
+    color: var(--color-accent);
+}
+
+p::selection, 
+h1::selection, 
+h2::selection,
+h3::selection,
+h4::selection, 
+h5::selection,
+span::selection{
+    background: var(--color-accent);
+    color: #071f2a;
+
+    /* This section is for highlighting the document and changing the colors*/
+}
+
+.experience-content{
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+.project-container{
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+.experience-card,
+.project-card{
+    display: grid;
+    /* grid is used for the dispersion of web page */
+    grid-template-columns: repeat(1, minmax(0,1fr));
+    
+}
+
+.experience-card{
+   gap: 0.5rem;
+}
+
+.project-card{
+    gap: 1rem;
+}
+
+.arrow-icon{
+    padding-left: 0.7rem;
+    font-size: 0.8rem;
+}
+
+
+.animated-text a {
+    color: var(--color-highlight);
+    cursor:pointer;
+    transition-duration: 100ms;
+    text-decoration: none;
+}
+
+.experience-content a{
+    text-decoration: none;
+}
+
+.date{
+    opacity: 0.7;
+}
+
+.about-content p{
+    font-size: 1rem;
+}   
+.card-column h3{
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.date, .experience-card p{
+    font-size: 0.9rem;
+}
+
+.card-column{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.tag-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    color: var(--color-accent);
+    cursor: pointer;
+}
+
+.tag{
+    border-radius: 0.5rem;
+    padding: 0.25rem 0.5rem;
+    background: rgba(45,212,191,.1);
+    /* tags used in experience */
+}
+.tag p{
+    font-size: 0.9rem;
+}
+
+section, .resume{
+    font-size: 16px;
+}
+
+.project-container a{
+    text-decoration: none;
+}
+.project-image{
+  max-width: 200px;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  aspect-ratio: 16/9;
+  order: 2;
+  
+}
+
+.project-image img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 0.25rem;
+}
+
+.project-stat-link{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.project-archive{
+    position: relative;
+    color: var(--color-highlight);
+    text-decoration: none;
+    transition-duration: 200ms;
+    margin-right: auto;
+}
+
+.project-archive span{
+    transition-duration: 200ms;
+}
+
+.project-archive:hover span{
+    padding-left: 0.5rem;
+}
+
+.project-archive::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 1.5px;
+    background: transparent;
+    transition-duration: 200ms;
+}
+
+.project-archive:hover::after{
+    background: var(--color-accent);
+}
+
+/* for the sections to be stick to the header we
+use sticky property */
+
+.sticky-link{
+    position: sticky;
+    top: 0;
+    padding: 1rem 0;
+}
+
+.sticky-link h2{
+    position: relative;
+    z-index: 2;
+}
+.sticky-link::before{
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: #071f2a;
+    opacity: 0.95;
+}
+
+footer{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    justify-content: space-between;
+    align-items: flex-start;
+
+}
+
+footer p{
+    font-size: 0.9rem;
+}
+
+.scroll-top{
+    text-decoration: none;
+    color: var(--color-accent);
+    background: var(--color-background);
+    padding: 0 0.7rem;
+    aspect-ratio: 1/1;
+    display: grid;
+    place-items: center;
+    border-radius: 100%;
+    overflow: hidden;
+    transition-duration: 200ms;
+
+}
+
+.scroll-top:hover{
+    opacity: 0.6;
+}
+
+.icons-section{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.social-links{
+    font-size: 1.3rem;
+    color: inherit;
+    text-decoration: none;
+    transition-duration: 200ms;
+    cursor: pointer;
+}
+
+.social-links:hover{
+    color: var(--color-highlight);
+}
+
+nav{
+    display: none;
+}
+
+nav a{
+    font-size: 0.95rem;
+
+}
+
+
+
+
+/* for tablet and desktop screen  */
+/* min width for tab will be 640px */
+/*min width for desktop will 1024px */
+@media(min-width:640px){
+    .experience-card,
+    .project-card{
+        grid-template-columns: repeat(4, minmax(0,1fr));
+    }
+
+    .card-column{
+        grid-column: span 3 / span 3;
+    }
+    .project-image{
+        order: 0;
+    }
+}
+
+@media(min-width:1024px){
+    body{
+        grid-template-columns: repeat(2, minmax(0,1fr));
+        gap: 1rem;
+        padding: 0 5rem;
+    }
+
+    header{
+       position: sticky;
+       top: 0;
+       height: 100vh;
+       padding-bottom: 7rem;
+    }
+
+    footer{
+        padding-top: 2.5rem;
+    }
+    header h1{
+        font-size: 2.3rem;
+    }
+
+    header h3{
+        font-size: 1.2rem;
+    }
+
+    header p{
+        max-width: 400px;
+        font-size: 0.9rem;
+    }
+
+    header,
+    main{
+        padding-top: 5rem;
+    }
+
+    nav{
+        display: flex;
+        flex-direction: column;
+        gap: 0.7rem;
+        flex: 1;
+        padding-top: 2rem;
+    }
+    .navbar a p{
+        font-size: 1rem;
+    }
+   
+    .sticky-link{
+        display: none;
+    }
+
+    footer{
+        grid-column: span 2 / span 2;
+        flex-direction: row;
+        max-width: 1200px;
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    }   
